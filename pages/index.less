@@ -1,53 +1,11 @@
 ._local {
-      :global {
-            .header_wrap {
-                  padding-bottom: 30px;
-                  border-bottom: 1px solid whitesmoke;
+      @media screen and (max-width:1200px) {
+            flex-direction: column;
+            height: auto;
+            padding: 10vh 0;
+      }
 
-                  .right {
-                        margin-left: 24px;
-
-                        .name {
-                              font-size: 6vh;
-                              line-height: 1;
-                              margin-bottom: 6px;
-                        }
-
-                        .slogan {
-                              font-size: 18px;
-                              margin-left: 2px;
-                        }
-                  }
-            }
-
-            .product_items {
-                  .product_item {
-                        width: 480px;
-
-                        .img_wrap {
-                              width: 96px;
-                              height: 96px;
-                              margin-right: 12px;
-                              border: 1px solid whitesmoke;
-
-                              .img {
-                                    max-width: 80%;
-                              }
-                        }
-
-                        .right {
-                              width: calc(100% - 96px);
-
-                              .name {
-                                    font-size: 24px;
-                              }
-
-                              .slogan {
-                                    font-size: 15px;
-                                    color: #aaa;
-                              }
-                        }
-                  }
-            }
+      @media screen and (max-width:480px) {
+            padding: 6vh 30px;
       }
 }

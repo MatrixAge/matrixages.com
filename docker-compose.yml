@@ -5,7 +5,12 @@ services:
     container_name: main
     build:
       context: .
-    command: npm run deploy
+    command: npm run start
     ports:
       - 3000:9010
+    networks:
+      - webnet
+
+networks:
+  webnet:
   

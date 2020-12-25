@@ -15,7 +15,7 @@ const Index = () => {
 				<title>Matrixages</title>
 			</Head>
 			<Intro />
-			<Products />
+                  <Products />
 		</div>
 	)
 }

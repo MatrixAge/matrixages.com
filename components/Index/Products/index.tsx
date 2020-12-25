@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import NavLink from '@/components/NavLink'
 import product_items from './data'
 import styles from './index.less'
@@ -10,8 +11,6 @@ const Index = () => {
                         border_box flex flex_column relative
                   `}
 		>
-			<div className='top cover absolute w_100 top_0 left_0' />
-			<div className='bottom cover absolute w_100 bottom_0 left_0' />
 			<div className='product_items w_100 border_box flex flex_column'>
 				{product_items.map((item, index) => (
 					<NavLink
@@ -28,7 +27,13 @@ const Index = () => {
 							className='img_wrap border_box flex justify_center align_center'
 							style={{ background: item.bg_color }}
 						>
-							<img className='img' src={item.img} alt={item.name} />
+							<Image
+								className='img'
+								width={64}
+								height={64}
+								src={item.img}
+								alt={item.name}
+							/>
 						</div>
 						<div className='right flex flex_column justify_center'>
 							<span className='name'>{item.name}</span>

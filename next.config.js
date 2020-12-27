@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins')
-const withCss = require('@zeit/next-css')
 const withLess = require('@zeit/next-less')
 
 const config = {
@@ -15,4 +14,4 @@ const config = {
 	}
 }
 
-module.exports = withPlugins([ withCss, withLess ], config)
+module.exports = withPlugins([ withLess ], config)

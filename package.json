@@ -7,7 +7,7 @@
             "build": "next build",
             "start": "next start",
             "deploy": "next build && next start",
-            "d:prod": "docker-compose up -d --build --force-recreate"
+            "d:prod": "docker-compose -f docker-compose.yml up -d --build --force-recreate"
       },
       "dependencies": {
             "next": "^10.0.5-canary.0",

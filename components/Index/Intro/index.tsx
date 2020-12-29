@@ -25,7 +25,7 @@ const Index = () => {
 			</NavLink>
 			<div className='description_items flex flex_column'>
 				{description_items.map((item, index) => (
-					<span className='description_item' key={index}>
+					<span className='description_item text_justify' key={index}>
 						{item}
 					</span>
 				))}

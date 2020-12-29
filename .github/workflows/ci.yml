@@ -21,7 +21,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: ./
-          remote_path: /app/
+          remote_path: /App/matrixages.com
           remote_port: '22'
           remote_host: ${{ secrets.SSH_HOST }}
           remote_user: ${{ secrets.SSH_USERNAME }}
@@ -34,4 +34,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          script: cd /app/ && npm run d:prod
+          script: cd /App/matrixages.com && npm run d:prod

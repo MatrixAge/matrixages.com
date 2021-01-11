@@ -8,7 +8,7 @@ const Index = () => {
 		<div
 			className={`
                   ${styles._local}
-                  border_box flex flex_column
+                  border_box flex flex_column justify_center align_center
             `}
 		>
 			<NavLink

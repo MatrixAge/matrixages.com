@@ -1,6 +1,9 @@
 ._local {
-      width: 480px;
-      padding-left: 30px;
+      width: calc(100vw - 600px);
+      height: 100vh;
+      padding: 72px;
+      background-color: var(--color_text);
+      border-radius: 24px;
 
       @media screen and (max-width:1200px) {
             padding-left: 0;
@@ -12,29 +15,36 @@
       :global {
             .product_items {
                   .product_item {
-                        padding: 15px;
-                        border-radius: 6px;
-                        border: 1px solid transparent;
-                        transition-property: background-color, color;
+                        @interval: 36px;
+
+                        width: calc(50% - @interval / 2);
+                        padding: 36px;
+                        padding-right: 36px + 64px + 15px;
+                        border-radius: 18px;
+                        margin-bottom: @interval;
+                        transition-property: box-shadow;
                         transition-duration: 0.3s;
                         transition-timing-function: ease;
+                        box-shadow: var(--box_shadow_morphic);
+                        border: 1px solid rgba(236, 241, 247, 0.8);
 
-                        &:last-child {
-                              margin-bottom: 0;
+                        &:nth-child(odd) {
+                              margin-right: @interval;
                         }
 
                         &:hover {
-                              border: 1px solid whitesmoke;
-                              background-color: black;
-                              color: white;
+                              box-shadow: var(--box_shadow_morphic_active);
 
-                              .right {
-                                    .name {
-                                          color: white;
-                                    }
+                              .img_wrap {
+                                    filter: grayscale(0);
+                                    opacity: 1;
+                              }
 
-                                    .slogan {
-                                          color: white;
+                              .detail{
+                                    .tags {
+                                          .tag {
+                                                opacity: 1;
+                                          }
                                     }
                               }
                         }
@@ -46,31 +56,70 @@
                         }
 
                         .img_wrap {
+                              right: 36px;
                               width: 64px;
                               height: 64px;
-                              border-radius: 50%;
-                              margin-right: 15px;
+                              border-radius: 18px;
                               overflow: hidden;
-
-                              .img {
-                                    max-width: 100%;
-                              }
+                              filter: blur(9px);
+                              opacity: 0.6;
+                              transition-property: filter, opacity;
+                              transition-duration: 0.3s;
+                              transition-timing-function: ease;
                         }
 
-                        .right {
-                              width: calc(100% - 96px);
-
+                        .detail {
                               .name {
                                     font-size: 24px;
                                     line-height: 1;
                                     margin-bottom: 9px;
+                                    color: var(--color_bg);
                               }
 
                               .slogan {
                                     font-size: 13px;
                                     line-height: 1;
                                     color: #aaa;
-                                    margin-bottom: 3px;
+                              }
+
+                              .tags {
+                                    margin-top: 12px;
+
+                                    .tag {
+                                          @color: #E04A1C;
+
+                                          padding: 6px;
+                                          padding-right: 9px;
+                                          border-radius: 24px;
+                                          margin-right: 12px;
+                                          color: @color;
+                                          line-height: 1;
+                                          background-color: #eee;
+                                          opacity: 0.15;
+                                          transition-property: opacity;
+                                          transition-duration: 0.3s;
+                                          transition-timing-function: ease;
+
+                                          .mark_wrap {
+                                                width: 15px;
+                                                height: 15px;
+                                                margin-right: 3px;
+                                                border-radius: 50%;
+                                                background-color: @color;
+                                                color: white;
+
+                                                .mark {
+                                                      font-size: 9px;
+                                                      line-height: 1;
+                                                      margin-top: -2px;
+                                                }
+                                          }
+
+                                          .text {
+                                                font-size: 12px;
+                                                font-weight: bold;
+                                          }
+                                    }
                               }
                         }
                   }

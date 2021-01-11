@@ -8,15 +8,15 @@ const Index = () => {
 		<div
 			className={`
                         ${styles._local}
-                        border_box flex flex_column relative
+                        border_box
                   `}
 		>
-			<div className='product_items w_100 border_box flex flex_column'>
+			<div className='product_items w_100 border_box flex flex_wrap'>
 				{product_items.map((item, index) => (
 					<NavLink
 						className={`
                                           ${item.border ? 'border' : ''}
-                                          product_item border_box flex align_center
+                                          product_item border_box flex flex_column justify_center relative
                                     `}
 						key={index}
 						to={item.href}
@@ -24,20 +24,33 @@ const Index = () => {
 						rel='noopener noreferrer'
 					>
 						<div
-							className='img_wrap border_box flex justify_center align_center'
+							className='img_wrap border_box flex justify_center align_center absolute'
 							style={{ background: item.bg_color }}
 						>
 							<Image
 								className='img'
-								width={64}
-								height={64}
+								width={48}
+								height={48}
 								src={item.img}
 								alt={item.name}
 							/>
 						</div>
-						<div className='right flex flex_column justify_center'>
+						<div className='detail w_100 border_box flex flex_column'>
 							<span className='name'>{item.name}</span>
 							<span className='slogan line_clamp_1'>{item.slogan}</span>
+							<div className='tags w_100 border_box flex'>
+								{item.tags.map((it, idx) => (
+									<div
+										className='tag flex align_center'
+										key={idx}
+									>
+										<div className='mark_wrap flex justify_center align_center'>
+											<span className='mark'>#</span>
+										</div>
+										<span className='text'>{it}</span>
+									</div>
+								))}
+							</div>
 						</div>
 					</NavLink>
 				))}

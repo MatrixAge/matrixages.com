@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import NavLink from '@/components/NavLink'
+import Icon from '@/components/Icon'
+import Law from '@/components/Law'
+import { github } from '@/icons'
 import product_items from './data'
 import styles from './index.less'
 
@@ -8,7 +11,7 @@ const Index = () => {
 		<div
 			className={`
                         ${styles._local}
-                        border_box
+                        w_100 border_box flex flex_column
                   `}
 		>
 			<div className='product_items w_100 border_box flex flex_wrap'>
@@ -23,6 +26,9 @@ const Index = () => {
 						target='_blank'
 						rel='noopener noreferrer'
 					>
+						<div className='platform_wrap flex justify_center align_center absolute'>
+                                          <Icon size={ 18} icon={github} />
+						</div>
 						<div
 							className='img_wrap border_box flex justify_center align_center absolute'
 							style={{ background: item.bg_color }}
@@ -38,7 +44,7 @@ const Index = () => {
 						<div className='detail w_100 border_box flex flex_column'>
 							<span className='name'>{item.name}</span>
 							<span className='slogan line_clamp_1'>{item.slogan}</span>
-							<div className='tags w_100 border_box flex'>
+							<div className='tags w_100 border_box flex flex_wrap'>
 								{item.tags.map((it, idx) => (
 									<div
 										className='tag flex align_center'
@@ -54,7 +60,8 @@ const Index = () => {
 						</div>
 					</NavLink>
 				))}
-			</div>
+                  </div>
+                  <Law className='law_wrap' />
 		</div>
 	)
 }

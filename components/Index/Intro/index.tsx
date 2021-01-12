@@ -1,5 +1,6 @@
 import NavLink from '@/components/NavLink'
 import MatrixAge from '@/components/MatrixAge'
+import Law from '@/components/Law'
 import description_items from './data'
 import styles from './index.less'
 
@@ -8,7 +9,7 @@ const Index = () => {
 		<div
 			className={`
                   ${styles._local}
-                  border_box flex flex_column justify_center align_center
+                  border_box flex flex_column justify_center align_center relative
             `}
 		>
 			<NavLink
@@ -30,6 +31,7 @@ const Index = () => {
 					</span>
 				))}
 			</div>
+			<Law className='law_wrap absolute' />
 		</div>
 	)
 }

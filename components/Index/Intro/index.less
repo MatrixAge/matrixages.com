@@ -1,17 +1,27 @@
 ._local {
       width: 600px;
       height: 100vh;
-      padding:0 100px;
+      padding: 0 100px;
 
       @media screen and (max-width:1200px) {
+            width: 480px;
+            height: auto;
             padding: 0;
-            padding-right: 0;
-            margin-bottom: 30px;
+            padding-top: 90px;
+            margin-bottom: 64px;
             border: none;
+
+            :global {
+                  .law_wrap {
+                        position: fixed;
+                  }
+            }
       }
 
-      @media screen and (max-width:480px) {
+      @media screen and (max-width:540px) {
             width: 100%;
+            padding: 0 30px;
+            padding-top: 90px;
       }
 
       :global {
@@ -46,20 +56,39 @@
                         margin-bottom: 9px;
                   }
             }
+
+            .law_wrap {
+                  bottom: 36px;
+            }
       }
 
-      @media screen and (max-width:414px) {
+      @media screen and (max-width:1200px) {
             :global {
                   .header_wrap {
                         flex-direction: column;
                         align-items: center;
+                        margin-bottom: 48px;
 
-                        .right{
+                        .right {
                               width: 100%;
                               margin-left: 0;
                               margin-top: 24px;
                               align-items: center;
                         }
+                  }
+
+                  .description_items {
+                        .description_item {
+                              &:last-child {
+                                    text-align: center;
+                                    margin-top: 42px;
+                                    color: white;
+                              }
+                        }
+                  }
+
+                  .law_wrap {
+                        display: none;
                   }
             }
       }
@@ -76,7 +105,7 @@
                               margin-top: 18px;
                               align-items: center;
 
-                              .name{
+                              .name {
                                     font-size: 48px;
                               }
                         }

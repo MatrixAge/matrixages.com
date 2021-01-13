@@ -127,7 +127,14 @@
                               .detail {
                                     .tags {
                                           .tag {
+                                                @color: #E04A1C;
+
                                                 opacity: 1;
+                                                color: @color;
+
+                                                .mark_wrap {
+                                                      background-color: @color;
+                                                }
                                           }
                                     }
                               }
@@ -187,7 +194,7 @@
                                     margin-top: 24px;
 
                                     .tag {
-                                          @color: #E04A1C;
+                                          @color: #aaa;
 
                                           padding: 6px;
                                           padding-right: 9px;

@@ -11,7 +11,8 @@ const config = {
 	cssLoaderOptions: {
 		importLoaders: 1,
 		localIdentName: '[hash:base64:3]'
-	}
+	},
+	future: { webpack5: true }
 }
 
 module.exports = withPlugins([ withLess ], config)

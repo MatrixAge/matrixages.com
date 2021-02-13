@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN npm install -g cnpm --registry https://registry.npm.taobao.org && cnpm install && npm run build
+RUN npm install -g cnpm --registry https://registry.npm.taobao.org && cnpm install && cnpm run build
 
 FROM node:lts-alpine AS deploy
 

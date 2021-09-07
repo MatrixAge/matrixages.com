@@ -43,11 +43,11 @@
 
                   .product_item {
                         overflow: hidden;
-                        margin-bottom: @interval;
+                        margin-bottom: 36px;
                         padding: 24px;
                         padding-right: 24px + 64px + 15px;
                         padding-bottom: 12px;
-                        width: calc(~'50% - '@interval' / 2');
+                        width: calc(~'50% - 36px / 2');
                         border: 1px solid rgba(236, 241, 247, 0.8);
                         border-radius: 18px;
                         box-shadow: var(--box_shadow_morphic);
@@ -55,10 +55,8 @@
                         transition-duration: 0.3s;
                         transition-property: box-shadow;
 
-                        @interval: 36px;
-
                         &:nth-child(odd) {
-                              margin-right: @interval;
+                              margin-right: 36px;
                         }
 
                         &:nth-child(1) {

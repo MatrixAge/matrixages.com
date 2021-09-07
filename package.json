@@ -5,8 +5,9 @@
       "scripts": {
             "dev": "next dev",
             "build": "next build",
-            "start": "next start",
+            "start": "next start -p 9010",
             "deploy": "next build && next start",
+            "deploy:pm2": "pm2 start yarn --name nextjs --interpreter bash -- start",
             "d:prod": "docker-compose up -d --build --force-recreate"
       },
       "dependencies": {

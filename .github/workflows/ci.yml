@@ -16,8 +16,15 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
+      - name: Build to dist
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm ci
+      - run: npm run build
+
       - name: Upload To Server
-        uses: burnett01/rsync-deployments@4.1
+        uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
           path: ./
@@ -34,4 +41,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          script: cd /App/matrixages.com/ && npm run d:prod
+          script: cd /App/matrixages.com/ && npm run deploy:pm2

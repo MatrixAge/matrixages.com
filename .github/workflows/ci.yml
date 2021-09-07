@@ -16,11 +16,14 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Build to dist
+      - name: Import Node Environment
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: npm install
+          cache: 'npm'
+
+      - name: Build to dist
+      - run: npm install --force
       - run: npm run build
 
       - name: Upload To Server

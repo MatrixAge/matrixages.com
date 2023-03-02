@@ -13,13 +13,7 @@ const config = {
 		cpus: 4,
 		appDir: true,
 		mdxRs: true,
-		typedRoutes: true,
-		optimizeCss: true,
-		isrFlushToDisk: true,
-		swcFileReading: true,
-		forceSwcTransforms: true,
-		gzipSize: true,
-		optimisticClientCache: true
+		typedRoutes: true
 	}
 }
 

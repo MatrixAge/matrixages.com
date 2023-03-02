@@ -6,7 +6,7 @@ const config = {
 	swcMinify: true,
 	i18n: {
 		locales: ['en-US', 'zh-CN'],
-		defaultLocale: 'en-US'
+		defaultLocale: 'en-US',
 	},
 	typescript: { ignoreBuildErrors: true },
 	experimental: {

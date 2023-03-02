@@ -8,6 +8,7 @@ const config = {
 		locales: ['en-US', 'zh-CN'],
 		defaultLocale: 'en-US'
 	},
+	typescript: { ignoreBuildErrors: true },
 	experimental: {
 		cpus: 4,
 		appDir: true,

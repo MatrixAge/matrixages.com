@@ -11,7 +11,6 @@ const config = {
 	typescript: { ignoreBuildErrors: true },
 	experimental: {
 		cpus: 4,
-		appDir: true,
 		mdxRs: true,
 		typedRoutes: true,
 		optimizeCss: true,

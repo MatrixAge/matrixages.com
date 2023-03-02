@@ -1,24 +1,24 @@
-'use client'
-
 import cx from 'classix'
+import { useRouter } from 'next/router'
 import { GithubLogo, MediumLogo, TwitterLogo } from 'phosphor-react'
+import { When } from 'react-if'
 
 import MatrixAge from '@/components/MatrixAge'
 
 import dao from './data'
 import styles from './index.module.css'
 
-import type { IPropsIntro } from '../../types'
+import type { App } from '@/types'
 
-const Index = (props: IPropsIntro) => {
-	const { locale } = props
+const Index = () => {
+	const { locale } = useRouter()
 
 	return (
 		<div
 			className={cx(
 				'border_box flex flex_column justify_center align_center relative',
 				styles._local,
-				styles[locale]
+				styles[locale as App.Locales]
 			)}
 		>
 			<a
@@ -36,13 +36,13 @@ const Index = (props: IPropsIntro) => {
 				</div>
 			</a>
 			<div className='description_items flex flex_column'>
-				{dao[locale].map((item, index) => (
+				{dao[locale as App.Locales].map((item, index) => (
 					<span className='description_item text_justify' key={index}>
 						{item}
 					</span>
 				))}
 			</div>
-			{locale === 'en-US' && (
+			<When condition={locale === 'en-US'}>
 				<div className='social_medias w_100 flex justify_center align_center'>
 					<div className='social_media_item flex justify_center align_center'>
 						<a
@@ -70,7 +70,7 @@ const Index = (props: IPropsIntro) => {
 						</a>
 					</div>
 				</div>
-			)}
+			</When>
 		</div>
 	)
 }

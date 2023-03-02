@@ -1,0 +1,88 @@
+@keyframes x {
+	0% {
+		background-image: linear-gradient(0deg, black, black);
+	}
+
+      25% {
+		background-image: linear-gradient(0deg, #007cf0, #00dfd8);
+	}
+
+	50% {
+		background-image: linear-gradient(0deg, #7928ca, #ff0080);
+	}
+
+	75% {
+		background-image: linear-gradient(0deg, #ff4d4d, #f9cb28);
+	}
+}
+
+._local {
+	padding: 48px;
+	max-width: 450px;
+	background-color: white;
+
+	&.en-US {
+		max-width: 540px;
+
+		:global {
+			.description_items {
+				line-height: 1.6;
+				font-size: 15px;
+				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			}
+		}
+	}
+
+	:global {
+		.header_wrap {
+			margin-bottom: 30px;
+
+			.right {
+				margin-top: 18px;
+
+				.name {
+					margin-bottom: 9px;
+					font-size: 54px;
+					line-height: 1;
+
+					.x {
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						background-image: linear-gradient(0deg, #7928ca, #ff0080);
+
+						:local {
+							animation: x infinite 20s;
+						}
+					}
+				}
+
+				.slogan {
+					font-size: 24px;
+					line-height: 1;
+				}
+			}
+		}
+
+		.description_items {
+			color: var(--color_text_sub);
+			font-size: 13px;
+			line-height: 1.7;
+
+			.description_item {
+				margin-bottom: 9px;
+			}
+		}
+
+		.social_medias {
+			font-size: 12px;
+			margin-top: 30px;
+
+			.social_media_item {
+				padding: 9px;
+				margin: 0 6px;
+				background-color: black;
+				fill: white;
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+._local {
+	--size: 6px;
+
+	width: calc(15 * var(--size));
+	height: calc(15 * var(--size));
+	padding: calc(2 * var(--size));
+	border: var(--size) solid var(--color_text);
+
+	&:hover {
+		opacity: 1;
+	}
+
+	:global {
+		.block {
+			width: var(--size);
+			height: 100%;
+			background-color: var(--color_text);
+		}
+	}
+}

@@ -1,17 +1,25 @@
-const withPlugins = require('next-compose-plugins')
-const withLess = require('@zeit/next-less')
+const withMDX = require('@next/mdx')()
 
+/** @type {import('next').NextConfig} */
 const config = {
-	cssModules: true,
-	typescript: {
-		transpileOnly: true,
-		ignoreDevErrors: true,
-		ignoreBuildErrors: true
+	reactStrictMode: true,
+	swcMinify: true,
+	i18n: {
+		locales: ['en-US', 'zh-CN'],
+		defaultLocale: 'en-US'
 	},
-	cssLoaderOptions: {
-		importLoaders: 1,
-		localIdentName: '[hash:base64:3]'
+	experimental: {
+		cpus: 4,
+		appDir: true,
+		mdxRs: true,
+		typedRoutes: true,
+		optimizeCss: true,
+		isrFlushToDisk: true,
+		swcFileReading: true,
+		forceSwcTransforms: true,
+		gzipSize: true,
+		optimisticClientCache: true
 	}
 }
 
-module.exports = withPlugins([ withLess ], config)
+module.exports = withMDX(config)
